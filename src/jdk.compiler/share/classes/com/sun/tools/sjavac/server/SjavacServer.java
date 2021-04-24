@@ -205,7 +205,7 @@ public class SjavacServer implements Terminable {
             try {
                 Socket socket = serverSocket.accept();
                 new RequestHandler(socket, sjavac).start();
-            } catch (SocketException se) {
+            } catch (SocketException s) {
                 // Caused by serverSocket.close() and indicates shutdown
             }
         } while (keepAcceptingRequests.get());

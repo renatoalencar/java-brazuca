@@ -917,8 +917,8 @@ public class Checker extends DocTreePathScanner<Void, Void> {
             env.messages.error(REFERENCE, tree, "dc.invalid.provides");
         }
         ReferenceTree serviceType = tree.getServiceType();
-        Element se = env.trees.getElement(new DocTreePath(getCurrentPath(), serviceType));
-        if (se == null) {
+        Element s = env.trees.getElement(new DocTreePath(getCurrentPath(), serviceType));
+        if (s == null) {
             env.messages.error(REFERENCE, tree, "dc.service.not.found");
         }
         return super.visitProvides(tree, ignore);
@@ -1086,8 +1086,8 @@ public class Checker extends DocTreePathScanner<Void, Void> {
             env.messages.error(REFERENCE, tree, "dc.invalid.uses");
         }
         ReferenceTree serviceType = tree.getServiceType();
-        Element se = env.trees.getElement(new DocTreePath(getCurrentPath(), serviceType));
-        if (se == null) {
+        Element s = env.trees.getElement(new DocTreePath(getCurrentPath(), serviceType));
+        if (s == null) {
             env.messages.error(REFERENCE, tree, "dc.service.not.found");
         }
         return super.visitUses(tree, ignore);

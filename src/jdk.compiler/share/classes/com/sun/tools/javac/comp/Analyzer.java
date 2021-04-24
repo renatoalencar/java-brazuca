@@ -570,7 +570,7 @@ public class Analyzer {
             Assert.error("Analyzer error when processing: " +
                          rewriting.originalTree + ":" + ex.toString() + "\n" +
                          Arrays.stream(ex.getStackTrace())
-                               .map(se -> se.toString())
+                               .map(s -> s.toString())
                                .collect(Collectors.joining("\n")));
         } finally {
             log.useSource(prevSource.getFile());

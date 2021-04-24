@@ -54,6 +54,57 @@ public class Tokens {
 
     public static final Context.Key<Tokens> tokensKey = new Context.Key<>();
 
+    private String[][] portugueseTranslations = {
+        {"abstrato", "abstract"},
+        {"asserte", "assert"},
+        {"booleano", "boolean"},
+        {"pare", "break"},
+        {"caso", "case"},
+        {"captura", "catch"},
+        {"caractere", "char"},
+        {"classe", "class"},
+        {"publico", "public"},
+        {"estatico", "static"},
+        {"vazio", "void"},
+        {"inteiro", "int"},
+        {"constante", "const"},
+        {"padrao", "default"},
+        {"faca", "do"},
+        {"dobro", "double"},
+        {"senao", "else"},
+        {"enumeravel", "enum"},
+        {"extende", "extends"},
+        {"finalmente", "finally"},
+        {"flutuante", "float"},
+        {"para", "for"},
+        {"vapara", "goto"},
+        {"se", "if"},
+        {"implementa", "implements"},
+        {"importe", "import"},
+        {"instanciade", "instanceof"},
+        {"longo", "long"},
+        {"nativo", "native"},
+        {"novo", "new"},
+        {"pacote", "package"},
+        {"privado", "private"},
+        {"protegido", "protected"},
+        {"publico", "public"},
+        {"retorne", "return"},
+        {"curto", "short"},
+        {"comutacao", "switch"},
+        {"sincronizado", "synchronized"},
+        {"esse", "this"},
+        {"lanca", "throw"},
+        {"lancas", "throws"},
+        {"transiente", "transient"},
+        {"tente", "try"},
+        {"volatil", "volatile"},
+        {"enquanto", "while"},
+        {"verdadeiro", "true"},
+        {"falso", "false"},
+        {"nulo", "null"}
+    };
+
     public static Tokens instance(Context context) {
         Tokens instance = context.get(tokensKey);
         if (instance == null)
@@ -69,6 +120,14 @@ public class Tokens {
                 names.fromString(t.name);
                 keywords.put(t.name, t);
             }
+        }
+
+        for (String[] t : portugueseTranslations) {
+            String portuguese = t[0];
+            String translation = t[1];
+
+            names.fromString(portuguese);
+            keywords.put(portuguese, keywords.get(translation));
         }
     }
 

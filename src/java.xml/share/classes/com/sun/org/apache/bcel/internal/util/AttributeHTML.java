@@ -188,21 +188,21 @@ final class AttributeHTML {
                 final InnerClass[] classes = ((InnerClasses) attribute).getInnerClasses();
                 // List inner classes
                 file.print("<UL>");
-                for (final InnerClass classe : classes) {
+                for (final InnerClass klass : classes) {
                     String name;
                     String access;
-                    index = classe.getInnerNameIndex();
+                    index = klass.getInnerNameIndex();
                     if (index > 0) {
                         name = ((ConstantUtf8) constant_pool.getConstant(index, Const.CONSTANT_Utf8))
                                 .getBytes();
                     } else {
                         name = "&lt;anonymous&gt;";
                     }
-                    access = Utility.accessToString(classe.getInnerAccessFlags());
+                    access = Utility.accessToString(klass.getInnerAccessFlags());
                     file.print("<LI><FONT COLOR=\"#FF0000\">" + access + "</FONT> "
-                            + constant_html.referenceConstant(classe.getInnerClassIndex())
+                            + constant_html.referenceConstant(klass.getInnerClassIndex())
                             + " in&nbsp;class "
-                            + constant_html.referenceConstant(classe.getOuterClassIndex())
+                            + constant_html.referenceConstant(klass.getOuterClassIndex())
                             + " named " + name + "</LI>\n");
                 }
                 file.print("</UL>\n");

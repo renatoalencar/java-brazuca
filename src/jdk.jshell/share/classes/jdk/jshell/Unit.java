@@ -426,15 +426,15 @@ final class Unit {
         Status overwrittenStatus = null;
         for (MethodSnippet sn : matching) {
             overwrittenStatus = sn.status();
-            SnippetEvent se = new SnippetEvent(
+            SnippetEvent s = new SnippetEvent(
                     sn, overwrittenStatus, OVERWRITTEN,
                     false, msi, null, null);
             sn.setOverwritten();
-            secondaryEvents.add(se);
+            secondaryEvents.add(s);
             state.debug(DBG_EVNT,
                     "Overwrite event #%d -- key: %s before: %s status: %s sig: %b cause: %s\n",
-                    secondaryEvents.size(), se.snippet(), se.previousStatus(),
-                    se.status(), se.isSignatureChange(), se.causeSnippet());
+                    secondaryEvents.size(), s.snippet(), s.previousStatus(),
+                    s.status(), s.isSignatureChange(), s.causeSnippet());
         }
         return overwrittenStatus;
     }
