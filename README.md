@@ -5,7 +5,7 @@ compilar o projeto.
 
 ## Como que isso funciona?
 
-Bem, eu basicamente modificar o analisador léxico para traduzir
+Bem, eu basicamente modifiquei o analisador léxico para traduzir
 palavras-chave da linguagem em português para o token correspondente.
 Foi feito de forma que não quebrasse a especificação original da linguagem
 para que o projeto podesse compilar.
